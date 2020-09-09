@@ -2,6 +2,7 @@ const {Builder} = require("selenium-webdriver");
 const signUp = require('./pages/signup');
 const logIn = require('./pages/login');
 const selectRegion = require('./pages/selectregion');
+const confirmation = require('./pages/confirmation');
 
 (async function() {
     let driver = await new Builder().forBrowser("chrome").build();
@@ -13,6 +14,7 @@ const selectRegion = require('./pages/selectregion');
         'pass' : "clrtpdXeKdzGuBm"
     };
     await logIn(driver, account);
-    await selectRegion(driver)
+    //await selectRegion(driver);
+    await confirmation(driver);
 }());
 

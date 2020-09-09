@@ -9,6 +9,7 @@
   "author": "clara",
   "license": "ISC",
   "dependencies": {
+    "await-sleep": "0.0.1",
     "faker": "^5.1.0",
     "selenium-webdriver": "^4.0.0-alpha.7"
   }
