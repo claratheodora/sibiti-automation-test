@@ -12,9 +12,7 @@ async function confirmation(driver){
     await driver.findElement(By.className('picker__today')).click();
     await driver.findElement(By.className('picker__close')).click();
     
-    const upload = await driver.findElement(By.className('btn'));
-    await upload.click();
-    await sleep(2500);
-    //await upload.sendKeys('C:\Users\HP\Downloads\huh.png');
+    await driver.findElement(By.id('gambar')).sendKeys('C:/Users/HP/Downloads/huh.png');
+    await driver.findElement(By.name('path')).click();
 }
 module.exports = confirmation;
