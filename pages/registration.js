@@ -14,7 +14,7 @@ async function registration(driver){
     await driver.findElement(By.xpath("//label[@for='jenis_kelamin_radioPerempuan']")).click();
     await driver.findElement(By.xpath("//label[@for='mapel_lomba_mescMatematika']")).click();
     await driver.findElement(By.id('gambar')).sendKeys('C:/Users/HP/Downloads/huh.png');
-    await driver.findElement(By.xpath("/html/body/section[2]/div/div/div/form/div[7]/button")).click();
+    await driver.findElement(By.xpath("//button[normalize-space() ='Simpan Data Peserta']")).click();
 
     //konfirmasi
     await driver.findElement(By.className('btn btn-primary btn-lg')).click(); 
