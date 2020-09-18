@@ -1,19 +1,20 @@
-const fetch = require('node-fetch');
-const bodyParser = require('body-parser');
-
-const query = `
-    query {
+const axios = require("axios")
+axios({
+  url: 'https://api.sibiti.co.id/graphql',
+  method: 'post',
+  data: {
+    query: `
+      query query {
         getEventById(id:"5c027a215b19282da64c1cb5"){
             registration{
                 name
-                type
+                type      
             }
         }
-  }`;
-
-fetch('https://api.sibiti.co.id/graphql', {
-    method: 'POST',
-    body: JSON.stringify({query}),
-}).then(res => res.text())
-  .then(body => console.log(body)) // {"data":{"repository":{"issues":{"totalCount":247}}}}
-  .catch(error => console.error(error));
+      }
+      `
+  }
+}).then((result) => {
+   const ambil = result.data.data.getEventById.registration;
+    console.log(ambil);
+});
